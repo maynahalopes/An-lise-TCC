@@ -1,0 +1,38 @@
+
+# Editor folders
+.vscode/
+.idea/
+*.code-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and temp files
+*.log
+*.tmp
+*.swp
+
+# Compiled files
+*.class
+*.pyc
+*.o
+*.exe
+
+# Backup files
+*~
+*.bak
+*.old
+
+# Node or Python virtual environments (caso futuramente use)
+node_modules/
+env/
+venv/
+**/venv/
+
+# GitHub-specific
+*.orig
+
+# Ignore everything in node_modules except this file
+!.gitignore
