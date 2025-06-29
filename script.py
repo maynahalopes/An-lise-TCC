@@ -20,7 +20,9 @@ df = pd.DataFrame({
     'sexo': np.random.choice(['Masculino', 'Feminino'], 100),
     'peso': np.random.randint(50, 100, 100),
     'altura': np.random.randint(150, 190, 100),
-    'freq_treino': np.random.choice(['1x', '2-3x', 'Todos os dias'], 100)
+    'freq_treino': np.random.choice(['1x', '2-3x', 'Todos os dias'], 100),
+    'bsq_score': np.random.randint(34, 204, 100),
+    'eat_score': np.random.randint(26, 156, 100)
 })
 
 
@@ -31,7 +33,32 @@ for col in eat_cols:
 
 
 
+df['imc'] = df['peso'] / (df['altura'] / 100)**2
+df['bsq_score'] = df[bsq_cols].sum(axis=1)
+df['eat_score'] = df[eat_cols].sum(axis=1)
+
+le_sexo = LabelEncoder()
+df['sexo_cod'] = le_sexo.fit_transform(df['sexo'])
+le_freq = LabelEncoder()
+df['freq_cod'] = le_freq.fit_transform(df['freq_treino'])
 
 
 
-#==============================================================================================
+
+
+
+
+
+
+
+
+#-------/Regressões/---------------------------------------------------------------------------
+
+
+X_bsq = sm.add_constant(df[['idade', 'sexo_cod', 'imc', 'freq_cod']])
+y_bsq = df['bsq_score']
+model_bsq = sm.OLS(y_bsq, X_bsq).fit()
+
+X_eat = sm.add_constant(df[['idade', 'sexo_cod', 'imc', 'freq_cod']])
+y_eat = df['eat_score']
+model_eat = sm.OLS(y_eat, X_eat).fit()
