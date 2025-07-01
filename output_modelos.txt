@@ -1,0 +1,74 @@
+=== Regressão Linear - BSQ ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              bsq_score   R-squared:                       0.019
+Model:                            OLS   Adj. R-squared:                 -0.022
+Method:                 Least Squares   F-statistic:                    0.4673
+Date:                Tue, 01 Jul 2025   Prob (F-statistic):              0.760
+Time:                        14:09:36   Log-Likelihood:                -376.27
+No. Observations:                 100   AIC:                             762.5
+Df Residuals:                      95   BIC:                             775.6
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const        119.1761      7.325     16.271      0.000     104.635     133.717
+idade         -0.1170      0.171     -0.682      0.497      -0.457       0.223
+sexo_cod      -0.0094      2.167     -0.004      0.997      -4.312       4.293
+imc            0.0964      0.173      0.556      0.579      -0.248       0.441
+freq_cod       1.3742      1.417      0.970      0.335      -1.439       4.188
+==============================================================================
+Omnibus:                        5.865   Durbin-Watson:                   1.774
+Prob(Omnibus):                  0.053   Jarque-Bera (JB):                5.237
+Skew:                          -0.492   Prob(JB):                       0.0729
+Kurtosis:                       3.538   Cond. No.                         265.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+=== Regressão Linear - EAT ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              eat_score   R-squared:                       0.036
+Model:                            OLS   Adj. R-squared:                 -0.004
+Method:                 Least Squares   F-statistic:                    0.8984
+Date:                Tue, 01 Jul 2025   Prob (F-statistic):              0.468
+Time:                        14:09:36   Log-Likelihood:                -357.55
+No. Observations:                 100   AIC:                             725.1
+Df Residuals:                      95   BIC:                             738.1
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+==============================================================================
+                 coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+const         96.3748      6.074     15.867      0.000      84.316     108.433
+idade          0.0527      0.142      0.371      0.712      -0.229       0.335
+sexo_cod      -1.2886      1.797     -0.717      0.475      -4.856       2.279
+imc           -0.1485      0.144     -1.033      0.304      -0.434       0.137
+freq_cod      -1.6239      1.175     -1.382      0.170      -3.957       0.709
+==============================================================================
+Omnibus:                        0.732   Durbin-Watson:                   2.115
+Prob(Omnibus):                  0.693   Jarque-Bera (JB):                0.316
+Skew:                           0.068   Prob(JB):                        0.854
+Kurtosis:                       3.240   Cond. No.                         265.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+=== Importância Random Forest (BSQ) ===
+const: 0.0000
+idade: 0.3319
+sexo_cod: 0.0576
+imc: 0.5151
+freq_cod: 0.0954
+
+
+=== Correlação de Spearman (BSQ vs EAT) ===
+Spearman R = 0.0411, p = 0.6846
+
+
+=== Mann-Whitney (BSQ por Sexo) ===
+U = 1157.0000, p = 0.6046
